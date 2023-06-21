@@ -196,6 +196,7 @@ void NeuralynxEditor::valueChanged(Value& value)
         hzLabel->setVisible(isReceiving);
         refreshButton->setVisible(isReceiving);
         refreshingLabel->setVisible(isReceiving && thread->updateBoardsAndHz.getValue());
+        CoreServices::updateSignalChain(this);
     }
     else if (value.refersToSameSourceAs(thread->numBoardsValue))
     {
