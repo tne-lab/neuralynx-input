@@ -196,7 +196,6 @@ void NeuralynxEditor::valueChanged(Value& value)
         hzLabel->setVisible(isReceiving);
         refreshButton->setVisible(isReceiving);
         refreshingLabel->setVisible(isReceiving && thread->updateBoardsAndHz.getValue());
-        CoreServices::updateSignalChain(this);
     }
     else if (value.refersToSameSourceAs(thread->numBoardsValue))
     {
@@ -209,6 +208,16 @@ void NeuralynxEditor::valueChanged(Value& value)
     else if (value.refersToSameSourceAs(thread->updateBoardsAndHz))
     {
         refreshingLabel->setVisible(value.getValue() && thread->receivingData.getValue());
+
+        float srate = thread->sampleRate.getValue();
+    
+        //// Need to tell the rest of the signal chain if the refresh button is clicked. 
+        //// Make sure sample rate is a valid value so we don't send 0 which sometimes gets inferred at first
+        if (srate >= 16000 && srate <= 40000)
+        {
+            std::cout << "Neuralynx plugin sending signal chain update for sample rate:" << (float)thread->sampleRate.getValue() << std::endl;
+            CoreServices::updateSignalChain(this);
+        }
     }
 }
 

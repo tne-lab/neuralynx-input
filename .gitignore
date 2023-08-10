@@ -11,3 +11,15 @@
 !**/Build/CMakeLists.txt
 !**/Build/CMAKE_README.txt
 
+**/.vs/*
+**/ALL_BUILD/**
+*.vcxproj
+*.vcxproj.*
+**/CMakeFiles/**
+**/Debug/**
+**/Release/**
+**/RelWithDebInfo/**
+*.sln
+cmake_install.cmake
+CMakeCache.txt
+install_manifest.txt
