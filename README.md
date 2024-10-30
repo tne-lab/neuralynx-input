@@ -2,7 +2,7 @@
 
 Plugin for the Open Ephys GUI to read data from Nerualynx systems such as ATLAS and Digital Lynx SX. These systems have a non-publicly-documented duplicated data output that sends UDP packets containing neural data during acquisition. This plugin is a data thread that receives these packets and sends them into an Open Ephys signal chain.
 
-The source code and functionality of this program are subject to a non-disclosure agreement (NDA) with Neuralynx, Inc. If you or your institution have not signed the appropriate NDA, STOP and do not read or execute this plugin until you have done so. Do not share this plugin with other parties who have not signed the NDA.
+~The source code and functionality of this program are subject to a non-disclosure agreement (NDA) with Neuralynx, Inc. If you or your institution have not signed the appropriate NDA, STOP and do not read or execute this plugin until you have done so. Do not share this plugin with other parties who have not signed the NDA.~ Requirement updated: No NDA signing required.
 
 ![Neuralynx Input plugin](nlx_editor.png)
 
